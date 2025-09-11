@@ -19,7 +19,7 @@ router.post("/send", async (req, res) => {
     // simulate vendor delay and call back to /receipt
     setTimeout(async () => {
       try {
-        await fetch("http://localhost:5000/api/vendor/receipt", {
+        await fetch("https://crm-backend-e8xq.onrender.com/api/vendor/receipt", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ logId, status, vendorResponse: "MockVendorResponse" }),

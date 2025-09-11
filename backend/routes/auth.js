@@ -14,17 +14,17 @@ router.get(
 // Step 2: Handle Callback
 router.get(
   "/google/callback",
-  passport.authenticate("google", { failureRedirect: "http://localhost:5173/login", session: false }),
+  passport.authenticate("google", { failureRedirect: "https://crm-frontend-yxq8.onrender.com/login", session: false }),
   (req, res) => {
     console.log(" Google callback triggered, req.user = ", req.user);
 
     if (!req.user || !req.user.token) {
       console.error(" No token from passport");
-      return res.redirect("http://localhost:5173/login");
+      return res.redirect("https://crm-frontend-yxq8.onrender.com/login");
     }
 
     //  Redirect to frontend with token
-    res.redirect(`http://localhost:5173/auth/success?token=${req.user.token}`);
+    res.redirect(`https://crm-frontend-yxq8.onrender.com/auth/success?token=${req.user.token}`);
   }
 );
 
@@ -40,7 +40,7 @@ router.get("/demo", (req, res) => {
 
   console.log("Demo login issued token:", token);
 
-  res.redirect(`http://localhost:5173/auth/success?token=${token}`);
+  res.redirect(`https://crm-frontend-yxq8.onrender.com/auth/success?token=${token}`);
 });
 
 module.exports = router;

@@ -43,7 +43,7 @@ for (const customer of customers) {
   });
 
   //     // 3. Call dummy vendor API
-  fetch("http://localhost:5000/api/vendor/send", {
+  fetch("https://crm-backend-e8xq.onrender.com/api/vendor/send", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ logId: log._id, message }),

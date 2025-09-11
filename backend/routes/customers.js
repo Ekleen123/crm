@@ -4,7 +4,7 @@ const Customer = require('../models/Customers');
 
 //post  /api/customers/query
 /*This creates a new API endpoint:
-POST http://localhost:5000/api/customers/query */
+POST https://crm-backend-e8xq.onrender.com/api/customers/query */
 router.post('/query', async (req, res) => {
     try{
         const{rules,condition} = req.body;
