@@ -27,7 +27,7 @@ export default function Campaigns() {
   useEffect(() => {
     const fetchCampaigns = async () => {
       try {
-        const data = await apiFetch("http://localhost:5000/api/campaigns");
+        const data = await apiFetch("https://crm-backend-e8xq.onrender.com/api/campaigns");
         setCampaigns(data || []);
       } catch (err) {
         setError(err.message);
@@ -56,7 +56,7 @@ export default function Campaigns() {
     e.preventDefault();
     try {
       setSubmitting(true);
-      const newCampaign = await apiFetch("http://localhost:5000/api/campaigns", {
+      const newCampaign = await apiFetch("https://crm-backend-e8xq.onrender.com/api/campaigns", {
         method: "POST",
         body: JSON.stringify({
           name,
@@ -103,7 +103,7 @@ export default function Campaigns() {
     }
     setLoadingAI(true);
     try {
-      const res = await apiFetch("http://localhost:5000/ai/suggest-messages", {
+      const res = await apiFetch("https://crm-backend-e8xq.onrender.com/ai/suggest-messages", {
         method: "POST",
         body: JSON.stringify({ objective }),
       });
@@ -118,7 +118,7 @@ export default function Campaigns() {
   // fetch AI campaign summary
   const handleSummarize = async (campaign) => {
     try {
-      const res = await fetch("http://localhost:5000/ai/summarize", {
+      const res = await fetch("https://crm-backend-e8xq.onrender.com/ai/summarize", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(campaign),

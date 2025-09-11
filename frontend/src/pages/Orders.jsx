@@ -15,7 +15,7 @@ export default function Orders() {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:5000/api/orders");
+      const res = await fetch("https://crm-backend-e8xq.onrender.com/api/orders");
       if (!res.ok) throw new Error("Failed to fetch orders");
       const data = await res.json();
       setOrders(data.orders || []);
@@ -29,7 +29,7 @@ export default function Orders() {
   // Fetch customers for dropdown
   const fetchCustomers = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/customers");
+      const res = await fetch("https://crm-backend-e8xq.onrender.com/api/customers");
       if (!res.ok) throw new Error("Failed to fetch customers");
       const data = await res.json();
       setCustomers(data.customers || []);
@@ -48,7 +48,7 @@ export default function Orders() {
   const handleAddOrder = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:5000/api/orders", {
+      const res = await fetch("https://crm-backend-e8xq.onrender.com/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

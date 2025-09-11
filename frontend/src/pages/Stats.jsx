@@ -19,7 +19,7 @@ export default function Stats() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/stats");
+        const res = await fetch("https://crm-backend-e8xq.onrender.com/api/stats");
         const data = await res.json();
         setStats(data);
       } catch (err) {
@@ -29,7 +29,7 @@ export default function Stats() {
 
     const fetchOrders = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/orders");
+        const res = await fetch("https://crm-backend-e8xq.onrender.com/api/orders");
         const data = await res.json();
         setOrders(data.orders || []);
       } catch (err) {
@@ -39,7 +39,7 @@ export default function Stats() {
 
     const fetchCustomers = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/customers");
+        const res = await fetch("https://crm-backend-e8xq.onrender.com/api/customers");
         const data = await res.json();
         // Sort top 5 customers by spend
         setTopCustomers(data.customers.sort((a, b) => b.spend - a.spend).slice(0, 5));

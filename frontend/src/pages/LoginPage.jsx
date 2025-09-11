@@ -1,10 +1,10 @@
 export default function Login() {
   const handleGoogleLogin = () => {
-    window.location.href = "http://localhost:5000/auth/google";
+    window.location.href = "https://crm-backend-e8xq.onrender.com/auth/google";
   };
 
   const handleDemoLogin = () => {
-    window.location.href = "http://localhost:5000/auth/demo";
+    window.location.href = "https://crm-backend-e8xq.onrender.com/auth/demo";
   };
 
   return (

@@ -16,7 +16,7 @@ export default function Customers() {
   const fetchCustomers = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:5000/api/customers");
+      const res = await fetch("https://crm-backend-e8xq.onrender.com/api/customers");
       if (!res.ok) throw new Error("Failed to fetch customers");
       const data = await res.json();
       setCustomers(data.customers); 
@@ -31,7 +31,7 @@ export default function Customers() {
   const handleAddCustomer = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:5000/api/customers", {
+      const res = await fetch("https://crm-backend-e8xq.onrender.com/api/customers", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
