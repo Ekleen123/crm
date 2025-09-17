@@ -1,6 +1,6 @@
 # Mini CRM Platform
 
-A full-stack **MERN CRM application** built as part of the **Xeno SDE Internship Assignment 2025**.
+A full-stack **MERN CRM application** 
 The platform enables **customer segmentation, campaign management, dashboards, and AI-powered insights**.
 
 🌍 **Live Demo** → [Mini CRM on Render](https://crm-frontend-yxq8.onrender.com)
@@ -66,3 +66,4 @@ Basic authentication flow (Google OAuth + localStorage)
 AI features depend on OpenAI API (rate limits apply)
 Simplified filters for audience targeting
 Vendor delivery API simulated (90% success rate)
+
